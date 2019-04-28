@@ -1,0 +1,81 @@
+{
+  "name": "fcookie",
+  "version": "1.0.0",
+  "description": "common operate for cookie",
+  "main": "./dist/fcookie.js",
+  "es": "./dist/fcookie.es.js",
+  "umd": "./dist/fcookie.umd.js",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development npm run lint:fix && npm run clean && rollup --config",
+    "build": "cross-env NODE_ENV=production npm run lint:fix && npm run clean && rollup --config",
+    "lint": "eslint src/**/*.ts",
+    "lint:fix": "eslint --fix src/**/*.ts",
+    "clean": "rimraf ./dist && mkdir dist",
+    "doc": "esdoc -c esdoc.json",
+    "test": "mocha",
+    "test:coverage": "nyc mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pxy0809/fcookie.git"
+  },
+  "keywords": [
+    "cookie"
+  ],
+  "author": "pxy0809",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pxy0809/fcookie/issues"
+  },
+  "homepage": "https://github.com/pxy0809/fcookie#readme",
+  "nyc": {
+    "include": [
+      "src/**/*.ts",
+      "src/**/*.tsx"
+    ],
+    "exclude": [
+      "**/*.d.ts"
+    ],
+    "extension": [
+      ".ts",
+      ".tsx"
+    ],
+    "require": [
+      "ts-node/register"
+    ],
+    "reporter": [
+      "text",
+      "html"
+    ],
+    "sourceMap": true,
+    "instrument": true,
+    "all": true
+  },
+  "devDependencies": {
+    "@types/chai": "^4.1.7",
+    "@types/jsdom": "^12.2.1",
+    "@types/mocha": "^5.2.5",
+    "@typescript-eslint/eslint-plugin": "^1.7.0",
+    "@typescript-eslint/parser": "^1.7.0",
+    "chai": "^4.2.0",
+    "cross-env": "^5.2.0",
+    "esdoc": "^1.1.0",
+    "esdoc-standard-plugin": "^1.0.0",
+    "esdoc-typescript-plugin": "^1.0.1",
+    "eslint": "^5.16.0",
+    "jsdom": "^13.2.0",
+    "merge": "^1.2.1",
+    "mocha": "^5.2.0",
+    "mochawesome": "^3.1.1",
+    "nyc": "^13.1.0",
+    "prettier": "^1.17.0",
+    "rimraf": "^2.6.3",
+    "rollup": "^1.1.0",
+    "rollup-plugin-typescript2": "^0.20.1",
+    "source-map-support": "^0.5.10",
+    "ts-node": "^7.0.1",
+    "tsconfig-paths": "^3.8.0",
+    "typescript": "^3.2.4",
+    "uglify-es": "^3.3.9"
+  }
+}
