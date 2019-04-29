@@ -16,11 +16,11 @@ declare global {
  * 创建客户端环境
  */
 export const createEnvironment = () => {
-  const server = createServer((request, response) => {
-    response.setHeader('Set-Cookie', ['name=fx', 'author=fiy']);
-    response.writeHead(200, { 'Content-Type': 'text/plain' });
-    response.end('ok');
-  }).listen(8090);
+  const server = createServer((req, res) => {
+      res.writeHead(200, { 'Content-Type': 'text/plain' });
+      res.end('ok');
+    })
+    .listen(8090);
 
   const url = 'http://127.0.0.1:8090';
   const cookieJar = new CookieJar();

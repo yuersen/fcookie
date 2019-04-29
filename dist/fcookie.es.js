@@ -48,7 +48,14 @@ var setItem = function(key, value, end, path, domain, secure) {
     (secure ? '; secure' : '');
 };
 
-var parse = JSON.parse;
+var parse = function(data) {
+  try {
+    return JSON.parse(data);
+  } catch (error) {
+    // return new Function('return ' + data)();
+    return data;
+  }
+};
 
 /**
  * 从当前的 cookie 中获取指定的值
