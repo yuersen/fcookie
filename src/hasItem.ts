@@ -5,7 +5,7 @@
  * @param {String} key 要检查的 cookie 名
  * @returns {Boolean}
  */
-const hasItem = (key: string): boolean => {
+const hasItem = (key?: string): boolean => {
   if (!key || /^(?:expires|max\-age|path|domain|secure)$/i.test(key)) {
     return false;
   }

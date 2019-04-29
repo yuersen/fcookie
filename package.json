@@ -5,6 +5,10 @@
   "main": "./dist/fcookie.js",
   "es": "./dist/fcookie.es.js",
   "umd": "./dist/fcookie.umd.js",
+  "files": [
+    "src/**/*",
+    "dist/**/*"
+  ],
   "scripts": {
     "dev": "cross-env NODE_ENV=development npm run lint:fix && npm run clean && rollup --config",
     "build": "cross-env NODE_ENV=production npm run lint:fix && npm run clean && rollup --config",
@@ -12,7 +16,7 @@
     "lint:fix": "eslint --fix src/**/*.ts",
     "clean": "rimraf ./dist && mkdir dist",
     "doc": "esdoc -c esdoc.json",
-    "test": "mocha",
+    "test": "mocha --opts ./test/mocha.opts",
     "test:coverage": "nyc mocha"
   },
   "repository": {
@@ -28,29 +32,6 @@
     "url": "https://github.com/pxy0809/fcookie/issues"
   },
   "homepage": "https://github.com/pxy0809/fcookie#readme",
-  "nyc": {
-    "include": [
-      "src/**/*.ts",
-      "src/**/*.tsx"
-    ],
-    "exclude": [
-      "**/*.d.ts"
-    ],
-    "extension": [
-      ".ts",
-      ".tsx"
-    ],
-    "require": [
-      "ts-node/register"
-    ],
-    "reporter": [
-      "text",
-      "html"
-    ],
-    "sourceMap": true,
-    "instrument": true,
-    "all": true
-  },
   "devDependencies": {
     "@types/chai": "^4.1.7",
     "@types/jsdom": "^12.2.1",

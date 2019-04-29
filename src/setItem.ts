@@ -17,7 +17,7 @@ const setItem = (
   end?: string | number | Date,
   path?: string,
   domain?: string,
-  secure?: string
+  secure?: boolean
 ): void => {
   if (!key || /^(?:expires|max\-age|path|domain|secure)$/i.test(key)) {
     return;
